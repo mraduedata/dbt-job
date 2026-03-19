@@ -1,0 +1,83 @@
+version: 2
+
+models:
+  - name: Gold__sales__FactSales
+    tests:
+      - unique:
+          column_name: "SalesOrderID"
+    columns:
+      # Key Section
+      - name: ShipToAddressHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimAddress')
+             field: AddressHashKey
+
+      - name: BillToAddressHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimAddress')
+             field: AddressHashKey
+           
+      - name: CustomerHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimCustomer')
+             field: CustomerHashKey
+
+      - name: OrderDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey
+      - name: DueDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey
+      - name: ShipDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey             
+  - name: Gold__sales__FactSalesDetail  
+    tests:
+      - unique:
+          column_name: "SalesOrderDetailID"
+    columns:
+      # Key Section
+      - name: ShipToAddressHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimAddress')
+             field: AddressHashKey
+
+      - name: BillToAddressHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimAddress')
+             field: AddressHashKey
+         
+      - name: CustomerHashKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimCustomer')
+             field: CustomerHashKey
+
+
+
+      - name: OrderDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey
+      - name: DueDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey
+      - name: ShipDateKey
+        tests:
+          - relationship_test: 
+             to: ref('Gold__common__DimDate')
+             field: DateKey                                                      

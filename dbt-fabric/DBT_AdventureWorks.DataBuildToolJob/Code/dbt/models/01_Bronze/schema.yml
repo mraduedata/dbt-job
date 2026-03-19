@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+    schema: dbo
+    database: LH_Bronze
+    tables: 
+      - name: address
+      - name: customer
+      - name: customeraddress
+      - name: product
+      - name: productcategory
+      - name: productdescription
+      - name: productmodelproductdescription      
+      - name: productmodel
+      - name: salesorderdetail
+      - name: salesorderheader

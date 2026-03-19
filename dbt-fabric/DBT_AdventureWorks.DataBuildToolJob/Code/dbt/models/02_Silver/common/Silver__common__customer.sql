@@ -1,0 +1,12 @@
+SELECT [CustomerID]
+      ,[NameStyle]
+      ,[Title]
+      ,[FirstName]
+      ,[MiddleName]
+      ,[LastName]
+      ,[Suffix]
+      ,[CompanyName]
+      ,[SalesPerson]
+      ,[EmailAddress]
+      ,[Phone]
+  FROM {{source('AdventureWorks', 'customer')}}
